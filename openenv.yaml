@@ -1,0 +1,28 @@
+name: api_contract_env
+version: "1.0.0"
+description: >
+  An OpenEnv environment for AI-powered API contract review.
+  An agent inspects OpenAPI specifications and identifies contract violations,
+  breaking changes, security issues, and REST design problems.
+  Three tasks of increasing difficulty with deterministic graders.
+
+server:
+  entry_point: server.app:main
+
+tags:
+  - openenv
+  - api-review
+  - real-world
+  - rl-environment
+  - software-engineering
+
+tasks:
+  - name: missing_fields
+    difficulty: easy
+    description: Find missing auth, error responses, and required markers in an OpenAPI spec
+  - name: breaking_changes
+    difficulty: medium
+    description: Identify all breaking changes between v1 and v2 of an API spec
+  - name: full_audit
+    difficulty: hard
+    description: Full API contract audit — REST violations, naming, security, dangerous endpoints
